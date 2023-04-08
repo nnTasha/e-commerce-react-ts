@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import MainContainer from './components/MainContainer/MainContainer'
 
 function App() {
-return (
-    <div className="App">
-      <h1>E_COMMERCE_APP</h1>
-    </div>
+  return (
+    <MainContainer>
+      <div className="App">
+        <h1>E_COMMERCE_APP</h1>
+      </div>
+    </MainContainer>
   )
 }
 
