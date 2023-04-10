@@ -1,15 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 
-import Home from './Pages/Home/Home';
-import Menpage from './Pages/Menpage/Menpage';
-import Womenpage from './Pages/Womenpage/Womenpage';
-import About from './Pages/About/About';
-import Contact from './Pages/Contact/Contact';
+import HomePage from './pages/HomePage/HomePage';
+import MenPage from './pages/MenPage/MenPage';
+import WomenPage from './pages/WomenPage/WomenPage';
+import AboutPage from './pages/AboutPage/AboutPage';
+import ContactPage from './pages/ContactPage/ContactPage';
+import CollectionsPage from './pages/CollectionsPage/CollectionsPage';
+
 import MainContainer from './components/SectionContainer/MainContainer';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
-import Collections from './Pages/Collections/Collections';
+
+import './App.css';
 
 function App() {
   return (
@@ -19,12 +21,12 @@ function App() {
           <Nav />
         </Header>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/collections" element={<Collections />} />
-          <Route path="/menpage" element={<Menpage />} />
-          <Route path="/womenpage" element={<Womenpage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/collections" element={<CollectionsPage />} />
+          <Route path="/men" element={<MenPage />} />
+          <Route path="/women" element={<WomenPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </MainContainer>
     </>

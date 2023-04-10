@@ -19,3 +19,7 @@ body {
   max-height: 100vh;
   text-align: center;
 }
+
+a {
+  text-decoration: none;
+}

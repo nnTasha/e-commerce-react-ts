@@ -1,32 +1,26 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Nav.module.scss';
+
+const navMenu = [
+  { route: '/', name: 'APP_NAME' },
+  { route: 'collections', name: 'Collections' },
+  { route: '/men', name: 'Men' },
+  { route: '/women', name: 'Women' },
+  { route: '/about', name: 'About' },
+  { route: '/contact', name: 'Contact' },
+];
 
 const Nav = () => {
   return (
-    <div className={styles.navContainer}>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">APPNAME</Link>
+    <nav className={styles.navContainer}>
+      <ul>
+        {navMenu.map((item) => (
+          <li className={styles.navItem} key={item.name}>
+            <NavLink to={item.route}>{item.name}</NavLink>
           </li>
-          <li>
-            <Link to="/collections">Collections</Link>
-          </li>
-          <li>
-            <Link to="/menpage">Men</Link>
-          </li>
-          <li>
-            <Link to="/womenpage">Women</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+        ))}
+      </ul>
+    </nav>
   );
 };
 export default Nav;
