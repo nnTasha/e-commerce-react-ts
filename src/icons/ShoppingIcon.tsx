@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ShoppingIconProps {
   width: string;
   height: string;

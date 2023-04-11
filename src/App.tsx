@@ -9,10 +9,7 @@ import CollectionsPage from './pages/CollectionsPage/CollectionsPage';
 
 import MainContainer from './components/SectionContainer/MainContainer';
 import Header from './components/Header/Header';
-import Nav from './components/Nav/Nav';
-
-import './App.css';
-import AuxiliaryMenu from './components/AuxiliaryMenu/AuxiliaryMenu';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   return (
@@ -28,6 +25,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </MainContainer>
+      <Footer />
     </>
   );
 }
