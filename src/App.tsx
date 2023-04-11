@@ -12,6 +12,7 @@ import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
 
 import './App.css';
+import AuxiliaryMenu from './components/AuxiliaryMenu/AuxiliaryMenu';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <MainContainer>
         <Header>
           <Nav />
+          <AuxiliaryMenu />
         </Header>
         <Routes>
           <Route path="/" element={<HomePage />} />
