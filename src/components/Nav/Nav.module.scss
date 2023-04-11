@@ -5,17 +5,7 @@
     justify-content: space-evenly;
     align-items: center;
 
-    width: 60%;
     height: 100%;
-}
-
-.navContainer ul > :first-child {
-    margin-right: 4rem;
-    font-size: 1.8rem;
-
-    a {
-        color: $color-black;
-    }
 }
 
 .navItem {

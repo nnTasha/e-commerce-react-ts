@@ -18,10 +18,7 @@ function App() {
   return (
     <>
       <MainContainer>
-        <Header>
-          <Nav />
-          <AuxiliaryMenu />
-        </Header>
+        <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/collections" element={<CollectionsPage />} />

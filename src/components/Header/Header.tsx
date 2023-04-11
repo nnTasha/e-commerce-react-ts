@@ -1,10 +1,14 @@
+import AuxiliaryMenu from '../AuxiliaryMenu/AuxiliaryMenu';
+import Nav from '../Nav/Nav';
+
 import styles from './Header.module.scss';
 
-type HeaderProps = {
-  children: React.ReactNode;
-};
-
-const Header = ({ children }: HeaderProps) => {
-  return <div className={styles.headerContainer}>{children}</div>;
+const Header = () => {
+  return (
+    <header className={styles.headerContainer}>
+      <Nav />
+      <AuxiliaryMenu />
+    </header>
+  );
 };
 export default Header;

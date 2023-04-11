@@ -1,5 +1,5 @@
+import { ShoppingIcon } from '../../icons/ShoppingIcon';
 import Avatar from '../Avatar/Avatar';
-import ShoppingIcon from '../ShoppingIcon/ShoppingIcon';
 
 import styles from './AuxiliaryMenu.module.scss';
 

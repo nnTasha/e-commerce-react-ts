@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Nav.module.scss';
+import { Logo } from '../Logo/Logo';
 
 const navMenu = [
-  { route: '/', name: 'APP_NAME' },
   { route: 'collections', name: 'Collections' },
   { route: '/men', name: 'Men' },
   { route: '/women', name: 'Women' },
@@ -13,6 +13,7 @@ const navMenu = [
 const Nav = () => {
   return (
     <nav className={styles.navContainer}>
+      <Logo />
       <ul>
         {navMenu.map((item) => (
           <li className={styles.navItem} key={item.name}>
