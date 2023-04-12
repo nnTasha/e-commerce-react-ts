@@ -1,21 +1,34 @@
 @import '../../styles/variables';
 .footerContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    background-color: #eee8e8;
 }
 
 .footerItem {
+    display: inline-block;
     list-style: none;
     font-size: 1.4rem;
+    margin: 2rem 1rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+
     a {
         color: $color-grey-light-1;
     }
 }
 
 .socialIcon {
+    padding: 1rem;
+    justify-content: space-around;
+
+    svg {
+        margin: 1rem;
+    }
+}
+
+.contacts {
     display: flex;
-    margin: 2rem;
     justify-content: space-around;
 }

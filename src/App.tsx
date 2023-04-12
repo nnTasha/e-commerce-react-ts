@@ -7,9 +7,9 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import CollectionsPage from './pages/CollectionsPage/CollectionsPage';
 
-import MainContainer from './components/SectionContainer/MainContainer';
-import Header from './components/Header/Header';
-import { Footer } from './components/Footer/Footer';
+import MainContainer from './Layout/SectionContainer/MainContainer';
+import Header from './Layout/Header/Header';
+import { Footer } from './Layout/Footer/Footer';
 
 function App() {
   return (

@@ -1,0 +1,19 @@
+.sectionContainer {
+    display: flex;
+    justify-content: center;
+    height: 30rem;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    margin: 6rem 0;
+
+    background-color: rgba(243, 169, 50, 0.14);
+}
+
+.searchInput {
+    margin: 2rem 0;
+}
+
+.searchButton {
+    display: flex;
+    justify-content: space-around;
+}
