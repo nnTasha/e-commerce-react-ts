@@ -1,0 +1,29 @@
+.carouselContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.sliderUpperPart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    align-items: center;
+    padding: 10px;
+}
+
+.carouselContent {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+
+    transition: all 250ms linear;
+}
+
+.slideItem {
+    display: inline-block;
+    margin-right: 2rem;
+}

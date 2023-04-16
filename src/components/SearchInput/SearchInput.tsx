@@ -1,5 +1,5 @@
 import { Input, Space } from 'antd';
-import { RightCircleTwoTone } from '@ant-design/icons';
+
 const { Search } = Input;
 
 const onSearch = (value: string) => console.log(value);

@@ -1,10 +1,14 @@
 @import '../../styles/variables';
+
 .footerContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10rem;
     background-color: #eee8e8;
+
+    margin-bottom: 0;
+    width: 100%;
 }
 
 .footerItem {
