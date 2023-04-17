@@ -70,7 +70,9 @@ const Collections = () => {
         />
         <div className={styles.items}>
           {selectedCollection.map((item, index) => (
-            <div key={index}>{item}</div>
+            <div key={index} className={styles.item}>
+              {item}
+            </div>
           ))}
         </div>
       </div>
