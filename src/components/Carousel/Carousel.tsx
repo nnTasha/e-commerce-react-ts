@@ -32,18 +32,13 @@ export default function Carousel(/*{ slides }: CarouselProps*/) {
     if (currentIndex > 0) {
       setCurrentIndex((prevState) => prevState - 1);
     }
-    console.log('go to previous');
   };
 
   const goToNext = () => {
     if (currentIndex < length - 1) {
       setCurrentIndex((prevState) => prevState + 1);
     }
-    console.log('go to next');
   };
-
-  console.log('length', length);
-  console.log('currentIndex', currentIndex);
 
   return (
     <div className={styles.carouselContainer}>

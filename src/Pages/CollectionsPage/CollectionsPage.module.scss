@@ -1,0 +1,19 @@
+@import '/src/styles/variables';
+
+.collectionParagraph {
+    margin: 4rem 0;
+    padding: 1rem;
+    font-size: $paragraphDefault;
+}
+
+.collectionContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    // width: calc(66.66% - 1rem);
+}
