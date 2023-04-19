@@ -11,16 +11,22 @@ import MainContainer from './Layout/SectionContainer/MainContainer';
 import Header from './Layout/Header/Header';
 import { Footer } from './Layout/Footer/Footer';
 
+import { ProductsContextProvider } from './context/ProductsContext';
+
 function App() {
   return (
     <>
       <MainContainer>
-        <Header />
+        <ProductsContextProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/collections" element={<CollectionsPage />} />
+            <Route path="/men" element={<MenPage />} />
+            <Route path="/women" element={<WomenPage />} />
+          </Routes>
+        </ProductsContextProvider>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/collections" element={<CollectionsPage />} />
-          <Route path="/men" element={<MenPage />} />
-          <Route path="/women" element={<WomenPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

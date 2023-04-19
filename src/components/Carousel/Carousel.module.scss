@@ -1,6 +1,7 @@
 .carouselContainer {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .sliderUpperPart {

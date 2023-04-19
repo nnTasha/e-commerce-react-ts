@@ -1,19 +1,40 @@
 import { Card } from 'antd';
+import styles from './ItemCard.module.scss';
+
 const { Meta } = Card;
 
-export default function ItemCard() {
+type ItemCardProps = {
+  title?: string;
+  price: string;
+  imgSrc: string;
+  style?: React.CSSProperties;
+  imageSize?: { width: number; height: number };
+};
+
+export default function ItemCard(props: ItemCardProps) {
+  const {
+    title,
+    imgSrc,
+    style,
+    imageSize = { width: 100, height: 100 },
+    price,
+  } = props;
+
   return (
     <Card
       hoverable
-      style={{ width: 200 }}
+      style={{ width: 200, ...style }}
       cover={
-        <img
-          alt="example"
-          src="https://origin.md/images/product/thumbs/2023/03/26172084_W_1.jpg"
-        />
+        <div className={styles.cardBottom}>
+          <img
+            alt="example"
+            src={imgSrc}
+            style={{ width: imageSize.width, height: imageSize.height }}
+          />
+        </div>
       }
     >
-      <Meta title="TEST" />
+      <Meta title={title} description={price} />
     </Card>
   );
 }

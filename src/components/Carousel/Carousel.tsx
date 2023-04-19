@@ -3,30 +3,22 @@ import { useEffect, useState } from 'react';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 import ItemCard from '../ItemCard/ItemCard';
+import { Product } from '../../types/types';
 
 import styles from './Carousel.module.scss';
 
-const slides = [
-  <ItemCard />,
-  <ItemCard />,
-  <ItemCard />,
-  <ItemCard />,
-  <ItemCard />,
-  <ItemCard />,
-  <ItemCard />,
-];
-
 type CarouselProps = {
-  slides: any[];
+  products?: Product[];
+  category: string;
 };
 
-export default function Carousel(/*{ slides }: CarouselProps*/) {
+export default function Carousel({ products = [], category }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [length, setLength] = useState(slides.length);
+  const [length, setLength] = useState(products.length);
 
   useEffect(() => {
-    setLength(slides.length);
-  }, [slides]);
+    setLength(products.length);
+  }, [products]);
 
   const goToPrevious = () => {
     if (currentIndex > 0) {
@@ -40,24 +32,33 @@ export default function Carousel(/*{ slides }: CarouselProps*/) {
     }
   };
 
+  if (!products.length) {
+    return <p>No products available</p>;
+  }
+
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.sliderUpperPart}>
-        TEST-TITLE{' '}
+        {category.toUpperCase()}
         <div>
           <LeftOutlined onClick={goToPrevious} />{' '}
           <RightOutlined onClick={goToNext} />
         </div>
       </div>
-      <div
-        className={styles.carouselContent}
-        style={{
-          transform: `translateX(-${currentIndex * (100 / slides.length)}%)`,
-        }}
-      >
-        {slides.map((slide, currentIndex) => (
-          <div key={currentIndex} className={styles.slideItem}>
-            {slide}
+      <div className={styles.carouselContent}>
+        {products.map((item, index) => (
+          <div
+            key={item.id}
+            className={styles.slideItem}
+            style={{
+              transform: `translateX(-${(currentIndex - index) * 100}%)`,
+            }}
+          >
+            <ItemCard
+              title={item.title}
+              price={item.price}
+              imgSrc={item.image}
+            />
           </div>
         ))}
       </div>
