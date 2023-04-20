@@ -3,8 +3,8 @@ import SearchButton from '../../components/SearchButton/SearchButton';
 import SearchInput from '../../components/SearchInput/SearchInput';
 
 import styles from './HomePage.module.scss';
-import Carousel from '../../components/Carousel/Carousel';
 import useProducts from '../../hooks/useProducts';
+import CarouselSlide from '../../components/Carousel/CarouselSlide';
 
 const Home = () => {
   const products = useProducts();
@@ -25,7 +25,7 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <Carousel products={products} category="Recently viewed " />
+        <CarouselSlide products={products} category="Recently viewed " />
       </section>
     </>
   );

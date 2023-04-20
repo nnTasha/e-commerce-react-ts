@@ -19,12 +19,9 @@
 .carouselContent {
     display: flex;
     justify-content: space-between;
-    overflow: hidden;
-
-    transition: all 250ms linear;
 }
 
 .slideItem {
     display: inline-block;
-    margin-right: 2rem;
+    margin-right: 3rem;
 }
