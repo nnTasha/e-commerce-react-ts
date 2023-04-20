@@ -6,6 +6,7 @@ import WomenPage from './pages/WomenPage/WomenPage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import CollectionsPage from './pages/CollectionsPage/CollectionsPage';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 
 import MainContainer from './Layout/SectionContainer/MainContainer';
 import Header from './Layout/Header/Header';
@@ -24,6 +25,7 @@ function App() {
             <Route path="/collections" element={<CollectionsPage />} />
             <Route path="/men" element={<MenPage />} />
             <Route path="/women" element={<WomenPage />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
           </Routes>
         </ProductsContextProvider>
         <Routes>

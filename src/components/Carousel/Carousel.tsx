@@ -58,6 +58,7 @@ export default function Carousel({ products = [], category }: CarouselProps) {
               title={item.title}
               price={item.price}
               imgSrc={item.image}
+              id={item.id}
             />
           </div>
         ))}
