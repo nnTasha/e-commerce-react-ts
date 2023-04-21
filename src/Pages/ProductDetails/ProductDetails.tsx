@@ -10,11 +10,13 @@ export default function ProductDetails() {
 
   return (
     <div className={styles.productContainer}>
-      <img
-        className={styles.productImage}
-        src={currentProduct?.image}
-        alt={currentProduct?.title}
-      />
+      <div className={styles.imageContainer}>
+        <img
+          className={styles.productImage}
+          src={currentProduct?.image}
+          alt={currentProduct?.title}
+        />
+      </div>
       <div className={styles.productDetails}>
         <h2 className={styles.productTitle}>{currentProduct?.title}</h2>
         <p className={styles.productDescription}>
