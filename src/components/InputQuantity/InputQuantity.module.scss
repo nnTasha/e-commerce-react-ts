@@ -1,0 +1,12 @@
+@import '/src/styles/variables';
+
+.Input {
+    width: 6rem;
+    margin: 1rem;
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+        border-color: $color-grey-light-1;
+    }
+}

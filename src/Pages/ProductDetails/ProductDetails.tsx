@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 
 import styles from './ProductDetails.module.scss';
+import { useShoppingCart } from '../../context/ShoppingCartContext';
+import InputQuantity from '../../components/InputQuantity/InputQuantity';
 
 export default function ProductDetails() {
   const products = useProducts();
@@ -23,7 +25,10 @@ export default function ProductDetails() {
           {currentProduct?.description}
         </p>
         <p className={styles.productPrice}>${currentProduct?.price}</p>
-        <button className={styles.productButton}>Add to Cart</button>
+        <div className={styles.cartControls}>
+          <InputQuantity />
+          <button className={styles.productButton}>Add to Cart</button>
+        </div>
       </div>
     </div>
   );

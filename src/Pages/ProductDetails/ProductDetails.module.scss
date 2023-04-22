@@ -31,16 +31,22 @@
 
 .productPrice {
     margin: 0 0 1rem 0;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
 .productButton {
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1rem;
     font-size: 1.2rem;
     background-color: #ff8400;
     color: white;
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
+}
+
+.cartControls {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
