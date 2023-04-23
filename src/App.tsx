@@ -13,6 +13,7 @@ import Header from './Layout/Header/Header';
 import { Footer } from './Layout/Footer/Footer';
 
 import { ProductsContextProvider } from './context/ProductsContext';
+import { ShoppingCartContextProvider } from './context/ShoppingCartContext';
 
 function App() {
   return (
@@ -25,8 +26,12 @@ function App() {
             <Route path="/collections" element={<CollectionsPage />} />
             <Route path="/men" element={<MenPage />} />
             <Route path="/women" element={<WomenPage />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
           </Routes>
+          <ShoppingCartContextProvider>
+            <Routes>
+              <Route path="/product/:id" element={<ProductDetails />} />
+            </Routes>
+          </ShoppingCartContextProvider>
         </ProductsContextProvider>
         <Routes>
           <Route path="/about" element={<AboutPage />} />
