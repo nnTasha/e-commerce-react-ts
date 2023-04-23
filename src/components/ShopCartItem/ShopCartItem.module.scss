@@ -1,0 +1,33 @@
+.shopCartItem {
+    display: flex;
+    width: 28rem;
+    height: 10rem;
+    padding: 0.5rem;
+    border: 1px solid #f3efef;
+    margin-bottom: 1rem;
+    align-items: center;
+    list-style-type: none;
+}
+
+.itemImage {
+    width: 5rem;
+    height: 5rem;
+}
+
+.shopCartItemInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.5rem;
+}
+
+.shopCartItemTitle {
+}
+
+.shopCartItemPrice {
+    font-size: 1.2rem;
+}
+
+.shopCartItemQuantity {
+    font-size: 1.2rem;
+}

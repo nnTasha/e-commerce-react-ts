@@ -6,7 +6,8 @@ export type ShoppingCartContextData = {
   getItemQuantity: (id: number) => number;
   addItemQuantity: (id: number, qty: number) => void;
   decreaseItemQuantity: (id: number) => void;
-  removeItemQuantity: (id: number) => void;
+  removeItem: (id: number) => void;
+  cartItemQuantity: number;
 };
 
 const ShoppingCartContext = createContext<ShoppingCartContextData>({
@@ -14,7 +15,8 @@ const ShoppingCartContext = createContext<ShoppingCartContextData>({
   getItemQuantity: (id: number) => 0,
   addItemQuantity: (id: number, qty: number) => {},
   decreaseItemQuantity: (id: number) => {},
-  removeItemQuantity: (id: number) => {},
+  removeItem: (id: number) => {},
+  cartItemQuantity: 0,
 });
 
 export function useShoppingCart() {
@@ -24,12 +26,16 @@ export function useShoppingCart() {
 export function ShoppingCartContextProvider({ children }: childrenNode) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
+  const cartItemQuantity = cartItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0
+  );
+
   function getItemQuantity(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
 
   function addItemQuantity(id: number, qty: number) {
-    // debugger;
     setCartItems((currentItems) => {
       if (currentItems.find((item) => item.id === id) === undefined) {
         return [...currentItems, { id, quantity: qty }];
@@ -61,7 +67,7 @@ export function ShoppingCartContextProvider({ children }: childrenNode) {
     });
   }
 
-  function removeItemQuantity(id: number) {
+  function removeItem(id: number) {
     setCartItems((currentItems) => {
       return currentItems.filter((item) => item.id !== id);
     });
@@ -71,8 +77,9 @@ export function ShoppingCartContextProvider({ children }: childrenNode) {
     getItemQuantity,
     addItemQuantity,
     decreaseItemQuantity,
-    removeItemQuantity,
+    removeItem,
     cartItems,
+    cartItemQuantity,
   };
 
   return (

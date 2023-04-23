@@ -20,15 +20,13 @@ function App() {
     <>
       <MainContainer>
         <ProductsContextProvider>
-          <Header />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/collections" element={<CollectionsPage />} />
-            <Route path="/men" element={<MenPage />} />
-            <Route path="/women" element={<WomenPage />} />
-          </Routes>
           <ShoppingCartContextProvider>
+            <Header />
             <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/collections" element={<CollectionsPage />} />
+              <Route path="/men" element={<MenPage />} />
+              <Route path="/women" element={<WomenPage />} />
               <Route path="/product/:id" element={<ProductDetails />} />
             </Routes>
           </ShoppingCartContextProvider>
