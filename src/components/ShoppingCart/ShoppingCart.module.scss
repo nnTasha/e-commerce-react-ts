@@ -1,0 +1,58 @@
+@import '/src/styles/variables';
+
+.cartContainer {
+    position: fixed;
+    top: 0;
+    right: -35rem;
+    width: 35rem;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+.cartContainer.open {
+    right: 0;
+}
+
+.cartHeader {
+    display: flex;
+    height: 7rem;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+}
+
+.cartContent {
+    padding: 2rem;
+}
+
+.cartSummary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.cartTotal {
+    font-weight: bold;
+}
+
+.cartCheckout {
+    background-color: $tertiary;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    font-size: 1.8rem;
+    padding: 1rem;
+}

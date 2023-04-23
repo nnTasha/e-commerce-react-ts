@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { Product } from '../types/types';
+import { Product, childrenNode } from '../types/types';
 
 interface ProductsContextData {
   products: Product[];
@@ -13,11 +13,7 @@ const ProductsContext = createContext<ProductsContextData>({
   error: null,
 });
 
-const ProductsContextProvider = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+const ProductsContextProvider = ({ children }: childrenNode) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
