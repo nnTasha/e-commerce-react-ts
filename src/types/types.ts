@@ -7,3 +7,12 @@ export type Product = {
     category: string;
     rating: {};
 };
+
+export type childrenNode = {
+    children: React.ReactNode;
+}
+
+export type CartItem = {
+    id: number;
+    quantity: number;
+};
