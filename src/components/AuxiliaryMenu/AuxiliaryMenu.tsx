@@ -7,8 +7,10 @@ import { ShoppingIcon } from '../../icons/ShoppingIcon';
 import Avatar from '../Avatar/Avatar';
 
 import styles from './AuxiliaryMenu.module.scss';
+import { useShoppingCart } from '../../context/ShoppingCartContext';
 
 const AuxiliaryMenu = () => {
+  const { cartItemQuantity } = useShoppingCart();
   const [cartVisible, setCartVisible] = useState(false);
 
   const handleCartToggle = () => {
@@ -17,7 +19,7 @@ const AuxiliaryMenu = () => {
 
   return (
     <div className={styles.auxiliaryContainer}>
-      <Badge>
+      <Badge count={cartItemQuantity}>
         <ShoppingIcon onClick={handleCartToggle} />
       </Badge>
       <Avatar />
