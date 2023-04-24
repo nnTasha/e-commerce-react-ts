@@ -6,16 +6,19 @@
     border: 1px solid #f3efef;
     margin-bottom: 1rem;
     align-items: center;
+    justify-content: space-between;
     list-style-type: none;
 }
 
 .itemImage {
     width: 5rem;
     height: 5rem;
+    margin: 1rem;
 }
 
 .shopCartItemInfo {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: space-around;
     padding: 0.5rem;

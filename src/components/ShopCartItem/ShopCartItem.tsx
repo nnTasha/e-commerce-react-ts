@@ -7,7 +7,7 @@ export default function ShopCartItem({ id, quantity }: CartItem) {
   const { removeItem } = useShoppingCart();
   const products = useProducts();
 
-  const item = products.find((item) => id);
+  const item = products.find((item) => item.id === id);
   if (item === undefined) return null;
 
   return (

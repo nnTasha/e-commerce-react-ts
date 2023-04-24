@@ -1,4 +1,5 @@
 import { useShoppingCart } from '../../context/ShoppingCartContext';
+import useProducts from '../../hooks/useProducts';
 import ShopCartItem from '../ShopCartItem/ShopCartItem';
 import styles from './ShoppingCart.module.scss';
 
@@ -12,6 +13,7 @@ export default function ShoppingCart({
   onClose,
 }: ShoppingCartProps) {
   const { cartItems } = useShoppingCart();
+  const products = useProducts();
 
   return (
     <div className={`${styles.cartContainer} ${isVisible ? styles.open : ''}`}>
@@ -27,7 +29,13 @@ export default function ShoppingCart({
           ))}
       </ul>
       <div className={styles.cartSummary}>
-        <span className={styles.cartTotal}>Total: $0.00</span>
+        <span className={styles.cartTotal}>
+          Total: $
+          {cartItems.reduce((total, cartItem) => {
+            const item = products.find((item) => item.id === cartItem.id);
+            return total + (item?.price || 0) * cartItem.quantity;
+          }, 0)}
+        </span>
         <button className={styles.cartCheckout}>Checkout</button>
       </div>
     </div>

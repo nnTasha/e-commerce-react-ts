@@ -9,7 +9,7 @@ const { Meta } = Card;
 type ItemCardProps = {
   id: number;
   title?: string;
-  price: string;
+  price: number;
   imgSrc: string;
   style?: React.CSSProperties;
   imageSize?: { width: number; height: number };
