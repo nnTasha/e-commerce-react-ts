@@ -2,10 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 import useProducts from '../../hooks/useProducts';
-import {
-  useShoppingCart,
-  ShoppingCartContextData,
-} from '../../context/ShoppingCartContext';
+import { useShoppingCart } from '../../context/ShoppingCartContext';
 import InputQuantity from '../../components/InputQuantity/InputQuantity';
 
 import styles from './ProductDetails.module.scss';
@@ -16,16 +13,13 @@ export default function ProductDetails() {
   const currentProduct = products.find((p) => p.id === Number(id));
 
   const [quantity, setQuantity] = useState(1);
-  const handleChange = (value: number | null) => {
-    if (value === null || value === Number('')) {
-      setQuantity(0);
-    } else {
-      setQuantity(Number(value));
-    }
+
+  const handleItemQuantity = (value: number | null) => {
+    const itemQty = value ? Number(value) : 0;
+    setQuantity(itemQty);
   };
 
-  const { addItemQuantity, cartItems }: ShoppingCartContextData =
-    useShoppingCart();
+  const { addItem, cartItems } = useShoppingCart();
 
   return (
     <div className={styles.productContainer}>
@@ -43,12 +37,10 @@ export default function ProductDetails() {
         </p>
         <p className={styles.productPrice}>${currentProduct?.price}</p>
         <div className={styles.cartControls}>
-          <InputQuantity handleChange={handleChange} />
+          <InputQuantity handleChange={handleItemQuantity} />
           <button
             className={styles.productButton}
-            onClick={() =>
-              addItemQuantity && addItemQuantity(Number(id), quantity)
-            }
+            onClick={() => addItem(Number(id), quantity)}
           >
             Add to Cart
           </button>

@@ -20,16 +20,17 @@ const ProductsContextProvider = ({ children }: childrenNode) => {
 
   useEffect(() => {
     setLoading(true);
-    fetch('https://fakestoreapi.com/products')
-      .then((res) => res.json())
-      .then((data) => {
+    (async () => {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products');
+        const data = await response.json();
         setProducts(data);
-        setLoading(false);
-      })
-      .catch((error) => {
+      } catch (err) {
         setError('Products fetching error !');
+      } finally {
         setLoading(false);
-      });
+      }
+    })();
   }, []);
 
   const value: ProductsContextData = { products, loading, error };

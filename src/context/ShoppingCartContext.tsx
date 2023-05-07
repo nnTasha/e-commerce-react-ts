@@ -1,10 +1,10 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { CartItem, childrenNode } from '../types/types';
 
 export type ShoppingCartContextData = {
   cartItems: CartItem[];
-  getItemQuantity: (id: number) => number;
-  addItemQuantity: (id: number, qty: number) => void;
+  getItem: (id: number) => number;
+  addItem: (id: number, qty: number) => void;
   decreaseItemQuantity: (id: number) => void;
   removeItem: (id: number) => void;
   cartItemQuantity: number;
@@ -12,8 +12,8 @@ export type ShoppingCartContextData = {
 
 const ShoppingCartContext = createContext<ShoppingCartContextData>({
   cartItems: [],
-  getItemQuantity: (id: number) => 0,
-  addItemQuantity: (id: number, qty: number) => {},
+  getItem: (id: number) => 0,
+  addItem: (id: number, qty: number) => {},
   decreaseItemQuantity: (id: number) => {},
   removeItem: (id: number) => {},
   cartItemQuantity: 0,
@@ -31,11 +31,11 @@ export function ShoppingCartContextProvider({ children }: childrenNode) {
     0
   );
 
-  function getItemQuantity(id: number) {
+  function getItem(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
 
-  function addItemQuantity(id: number, qty: number) {
+  function addItem(id: number, qty: number) {
     setCartItems((currentItems) => {
       if (currentItems.find((item) => item.id === id) === undefined) {
         return [...currentItems, { id, quantity: qty }];
@@ -74,8 +74,8 @@ export function ShoppingCartContextProvider({ children }: childrenNode) {
   }
 
   const value: ShoppingCartContextData = {
-    getItemQuantity,
-    addItemQuantity,
+    getItem,
+    addItem,
     decreaseItemQuantity,
     removeItem,
     cartItems,
