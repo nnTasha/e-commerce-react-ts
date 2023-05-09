@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
-import { Logo } from '../../components/Logo/Logo';
-import InstagramIcon from '../../icons/InstagramIcon';
-import { FacebookIcon } from '../../icons/FacebookIcon';
-import TwitterIcon from '../../icons/TwitterIcon';
+import { Logo } from '@/components/Logo/Logo';
+import InstagramIcon from '@/icons/InstagramIcon';
+import { FacebookIcon } from '@/icons/FacebookIcon';
+import TwitterIcon from '@/icons/TwitterIcon';
 
 import style from './Footer.module.scss';
 

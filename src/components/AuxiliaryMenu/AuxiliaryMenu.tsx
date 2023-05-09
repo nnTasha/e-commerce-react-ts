@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import { Badge } from 'antd';
 
-import ShoppingCart from '../ShoppingCart/ShoppingCart';
-import { ShoppingIcon } from '../../icons/ShoppingIcon';
+import { useShoppingCart } from '@/context/ShoppingCartContext';
 import Avatar from '../Avatar/Avatar';
+import { ShoppingIcon } from '@/icons/ShoppingIcon';
+import ShoppingCart from '../ShoppingCart/ShoppingCart';
 
 import styles from './AuxiliaryMenu.module.scss';
-import { useShoppingCart } from '../../context/ShoppingCartContext';
 
 const AuxiliaryMenu = () => {
   const { cartItemQuantity } = useShoppingCart();

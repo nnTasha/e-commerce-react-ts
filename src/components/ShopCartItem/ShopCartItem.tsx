@@ -1,6 +1,7 @@
-import { useShoppingCart } from '../../context/ShoppingCartContext';
-import useProducts from '../../hooks/useProducts';
-import { CartItem, Item } from '../../types/types';
+import { CartItem } from '@/types/types';
+import { useShoppingCart } from '@/context/ShoppingCartContext';
+import useProducts from '@/hooks/useProducts';
+
 import styles from './ShopCartItem.module.scss';
 
 export default function ShopCartItem({ id, quantity }: CartItem) {

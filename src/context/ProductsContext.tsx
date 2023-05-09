@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { Product, childrenNode } from '../types/types';
+import { Product, childrenNode } from '@/types/types';
 
 interface ProductsContextData {
   products: Product[];

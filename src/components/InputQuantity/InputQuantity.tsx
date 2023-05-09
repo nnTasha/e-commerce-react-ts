@@ -1,4 +1,3 @@
-import { ChangeEvent, ChangeEventHandler } from 'react';
 import { InputNumber } from 'antd';
 
 import styles from './InputQuantity.module.scss';

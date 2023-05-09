@@ -1,7 +1,7 @@
 import Carousel from 'react-multi-carousel';
 
+import { Product } from '@/types/types';
 import ItemCard from '../ItemCard/ItemCard';
-import { Product } from '../../types/types';
 
 import styles from './Carousel.module.scss';
 import 'react-multi-carousel/lib/styles.css';

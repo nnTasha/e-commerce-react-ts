@@ -1,10 +1,11 @@
 import { Space } from 'antd';
-import SearchButton from '../../components/SearchButton/SearchButton';
-import SearchInput from '../../components/SearchInput/SearchInput';
+
+import SearchInput from '@/components/SearchInput/SearchInput';
+import SearchButton from '@/components/SearchButton/SearchButton';
+import CarouselSlide from '@/components/Carousel/CarouselSlide';
+import useProducts from '@/hooks/useProducts';
 
 import styles from './HomePage.module.scss';
-import useProducts from '../../hooks/useProducts';
-import CarouselSlide from '../../components/Carousel/CarouselSlide';
 
 const Home = () => {
   const products = useProducts();

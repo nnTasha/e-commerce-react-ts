@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import { CartItem, childrenNode } from '../types/types';
+import { CartItem, childrenNode } from '@/types/types';
 
 export type ShoppingCartContextData = {
   cartItems: CartItem[];

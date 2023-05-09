@@ -1,8 +1,8 @@
-import { useShoppingCart } from '../../context/ShoppingCartContext';
-import useProducts from '../../hooks/useProducts';
+import useProducts from '@/hooks/useProducts';
+import { useShoppingCart } from '@/context/ShoppingCartContext';
 import ShopCartItem from '../ShopCartItem/ShopCartItem';
-import styles from './ShoppingCart.module.scss';
 
+import styles from './ShoppingCart.module.scss';
 type ShoppingCartProps = {
   isVisible: boolean;
   onClose?: () => void;

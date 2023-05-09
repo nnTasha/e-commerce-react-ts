@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 
-import useProducts from '../../hooks/useProducts';
-import { useShoppingCart } from '../../context/ShoppingCartContext';
-import InputQuantity from '../../components/InputQuantity/InputQuantity';
+import InputQuantity from '@/components/InputQuantity/InputQuantity';
+import { useShoppingCart } from '@/context/ShoppingCartContext';
+import useProducts from '@/hooks/useProducts';
 
 import styles from './ProductDetails.module.scss';
 

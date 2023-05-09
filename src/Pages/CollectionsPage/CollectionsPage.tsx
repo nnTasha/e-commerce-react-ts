@@ -2,7 +2,7 @@ import { SkinOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 
-import ItemCard from '../../components/ItemCard/ItemCard';
+import ItemCard from '@/components/ItemCard/ItemCard';
 
 import styles from './CollectionsPage.module.scss';
 

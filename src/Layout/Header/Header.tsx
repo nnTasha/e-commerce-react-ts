@@ -1,5 +1,5 @@
-import AuxiliaryMenu from '../../components/AuxiliaryMenu/AuxiliaryMenu';
-import Nav from '../../components/Nav/Nav';
+import Nav from '@/components/Nav/Nav';
+import AuxiliaryMenu from '@/components/AuxiliaryMenu/AuxiliaryMenu';
 
 import styles from './Header.module.scss';
 
