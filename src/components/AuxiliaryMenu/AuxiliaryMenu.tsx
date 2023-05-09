@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { Badge } from 'antd';
 
@@ -13,18 +13,24 @@ const AuxiliaryMenu = () => {
   const { cartItemQuantity } = useShoppingCart();
   const [cartVisible, setCartVisible] = useState(false);
 
+  const menuRef = useRef(null);
+
   const handleCartToggle = () => {
     setCartVisible(!cartVisible);
   };
 
   return (
-    <div className={styles.auxiliaryContainer}>
+    <div className={styles.auxiliaryContainer} ref={menuRef}>
       <Badge count={cartItemQuantity}>
         <ShoppingIcon onClick={handleCartToggle} />
       </Badge>
       <Avatar />
       {cartVisible && (
-        <ShoppingCart isVisible={cartVisible} onClose={handleCartToggle} />
+        <ShoppingCart
+          isVisible={cartVisible}
+          onClose={handleCartToggle}
+          parentRef={menuRef}
+        />
       )}
     </div>
   );
