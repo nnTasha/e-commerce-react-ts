@@ -13,24 +13,18 @@ const AuxiliaryMenu = () => {
   const { cartItemQuantity } = useShoppingCart();
   const [cartVisible, setCartVisible] = useState(false);
 
-  const menuRef = useRef(null);
-
   const handleCartToggle = () => {
     setCartVisible(!cartVisible);
   };
 
   return (
-    <div className={styles.auxiliaryContainer} ref={menuRef}>
+    <div className={styles.auxiliaryContainer}>
       <Badge count={cartItemQuantity}>
         <ShoppingIcon onClick={handleCartToggle} />
       </Badge>
       <Avatar />
       {cartVisible && (
-        <ShoppingCart
-          isVisible={cartVisible}
-          onClose={handleCartToggle}
-          parentRef={menuRef}
-        />
+        <ShoppingCart isVisible={cartVisible} onClose={handleCartToggle} />
       )}
     </div>
   );

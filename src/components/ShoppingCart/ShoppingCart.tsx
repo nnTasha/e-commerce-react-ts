@@ -1,38 +1,26 @@
 import { RefObject, useRef, useState } from 'react';
 import useProducts from '@/hooks/useProducts';
 import { useShoppingCart } from '@/context/ShoppingCartContext';
-import useOnClickOutside from '@/hooks/useOnClickOutside';
+
 import ShopCartItem from '../ShopCartItem/ShopCartItem';
 
 import styles from './ShoppingCart.module.scss';
+import { useOnClickOutside } from 'usehooks-ts';
 
 type ShoppingCartProps = {
   isVisible: boolean;
   onClose?: () => void;
-  parentRef: RefObject<HTMLElement>;
 };
 
 export default function ShoppingCart({
   isVisible,
   onClose,
-  parentRef,
 }: ShoppingCartProps) {
   const { cartItems } = useShoppingCart();
   const products = useProducts();
 
   const ref = useRef<HTMLInputElement>(null);
-  const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-    const el = ref?.current;
-    const parent = parentRef?.current;
-    if (
-      !el ||
-      el.contains(event.target as Node) ||
-      parent?.contains(event.target as Node)
-    ) {
-      return;
-    }
-    onClose?.();
-  };
+  const handleClickOutside = () => onClose?.();
 
   useOnClickOutside(ref, handleClickOutside);
 
