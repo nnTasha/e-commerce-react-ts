@@ -1,4 +1,4 @@
-import { InputNumber } from 'antd';
+import { InputNumber } from 'rsuite';
 
 import styles from './InputQuantity.module.scss';
 
@@ -7,7 +7,10 @@ type InputNumberProps = {
   max?: number;
   defaultValue?: number;
   style?: React.CSSProperties;
-  handleChange?: (value: number | null) => void;
+  handleChange?: (
+    value: number | string,
+    event: React.SyntheticEvent<Element, Event>
+  ) => void;
 };
 
 export default function InputQuantity({

@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { Card } from 'antd';
+import { Panel } from 'rsuite';
 
 import styles from './ItemCard.module.scss';
-
-const { Meta } = Card;
 
 type ItemCardProps = {
   id: number;
@@ -27,21 +25,26 @@ export default function ItemCard(props: ItemCardProps) {
 
   return (
     <Link to={`/product/${id}`}>
-      <Card
-        hoverable
-        style={{ width: 200, ...style }}
-        cover={
-          <div className={styles.cardBottom}>
-            <img
-              alt="example"
-              src={imgSrc}
-              style={{ width: imageSize.width, height: imageSize.height }}
-            />
-          </div>
-        }
+      <Panel
+        shaded
+        bordered
+        bodyFill
+        style={{ display: 'inline-block', width: 240 }}
       >
-        <Meta title={title} description={price} />
-      </Card>
+        <img
+          alt="example"
+          src={imgSrc}
+          style={{ width: imageSize.width, height: imageSize.height }}
+        />
+      </Panel>
+      <Panel header={title}>
+        <p>
+          <small>
+            Description
+            {price}
+          </small>
+        </p>
+      </Panel>
     </Link>
   );
 }

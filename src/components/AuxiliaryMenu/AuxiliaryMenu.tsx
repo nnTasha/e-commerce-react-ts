@@ -1,6 +1,6 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
-import { Badge } from 'antd';
+import Badge from '@mui/material/Badge';
 
 import { useShoppingCart } from '@/context/ShoppingCartContext';
 import Avatar from '../Avatar/Avatar';
@@ -19,7 +19,7 @@ const AuxiliaryMenu = () => {
 
   return (
     <div className={styles.auxiliaryContainer}>
-      <Badge count={cartItemQuantity}>
+      <Badge badgeContent={cartItemQuantity}>
         <ShoppingIcon onClick={handleCartToggle} />
       </Badge>
       <Avatar />
