@@ -1,6 +1,5 @@
-import { Input, Space } from 'antd';
-
-const { Search } = Input;
+import { Input, InputGroup } from 'rsuite';
+import SearchIcon from '@rsuite/icons/Search';
 
 const onSearch = (value: string) => console.log(value);
 
@@ -10,11 +9,11 @@ type SearchInputProps = {
 };
 export default function SearchInput({ placeholder, style }: SearchInputProps) {
   return (
-    <Search
-      placeholder={placeholder}
-      allowClear
-      onSearch={onSearch}
-      style={style}
-    />
+    <InputGroup inside style={style}>
+      <Input type="search" onChange={onSearch} />
+      <InputGroup.Button>
+        <SearchIcon />
+      </InputGroup.Button>
+    </InputGroup>
   );
 }

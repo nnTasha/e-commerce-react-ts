@@ -1,4 +1,4 @@
-import { Space } from 'antd';
+import { Button, ButtonToolbar } from 'rsuite';
 
 import SearchInput from '@/components/SearchInput/SearchInput';
 import SearchButton from '@/components/SearchButton/SearchButton';
@@ -17,12 +17,12 @@ const Home = () => {
           <SearchInput placeholder="find your item" style={{ width: '60%' }} />
         </div>
         <div className={styles.searchButton}>
-          <Space size={30}>
-            <SearchButton title="Men's clothes" />
-            <SearchButton title="Women's clothes" />
-            <SearchButton title="Beauty" />
-            <SearchButton title="Accessories" />
-          </Space>
+          <ButtonToolbar>
+            <Button appearance="default">Men's clothes</Button>
+            <Button appearance="default">Women's clothes</Button>
+            <Button appearance="default">Beauty</Button>
+            <Button appearance="default">Accessories</Button>
+          </ButtonToolbar>
         </div>
       </section>
       <section>
